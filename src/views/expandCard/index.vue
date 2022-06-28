@@ -1,15 +1,40 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 const imgList = [
   {
-    url: '../../assets/expandCard/1.png',
+    url: require('../../assets/expandCard/1.png'),
     title: 'Explore the World',
   },
+  {
+    url: require('../../assets/expandCard/2.png'),
+    title: 'Wild Forest',
+  },
+  {
+    url: require('../../assets/expandCard/3.png'),
+    title: 'Sunny Beach',
+  },
+  {
+    url: require('../../assets/expandCard/4.png'),
+    title: 'City on Winter',
+  },
+  {
+    url: require('../../assets/expandCard/5.png'),
+    title: 'Mountains-Cloud',
+  },
 ]
+
+const selecteIndex = ref(0)
+
+function handleClick(index) {
+  selecteIndex.value = index
+}
 </script>
 
 <template>
   <div class="container">
-    <div v-for="item in imgList" :key="item.title" class="pannel" :style="{ backgroundImage: `url(${item.url})` }">
+    <div v-for="(item, index) in imgList" :key="item.title" class="pannel" :class="{ active: selecteIndex === index }"
+      :style="{ backgroundImage: `url(${item.url})` }" @click="handleClick(index)">
       <h3>{{ item.title }}</h3>
     </div>
   </div>
@@ -29,7 +54,7 @@ const imgList = [
 
 .container {
   display: flex;
-  width: 90vh;
+  width: 90vw;
 
   .pannel {
     position: relative;
