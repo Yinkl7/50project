@@ -26,15 +26,17 @@ const imgList = [
 
 const selecteIndex = ref(0)
 
-function handleClick(index) {
+function handleClick(index: number) {
   selecteIndex.value = index
 }
 </script>
 
 <template>
   <div class="container">
-    <div v-for="(item, index) in imgList" :key="item.title" class="pannel" :class="{ active: selecteIndex === index }"
-      :style="{ backgroundImage: `url(${item.url})` }" @click="handleClick(index)">
+    <div
+      v-for="(item, index) in imgList" :key="item.title" class="pannel" :class="{ active: selecteIndex === index }"
+      :style="{ backgroundImage: `url(${item.url})` }" @click="handleClick(index)"
+    >
       <h3>{{ item.title }}</h3>
     </div>
   </div>

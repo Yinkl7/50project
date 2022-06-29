@@ -13,6 +13,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'expandCard',
     component: () => import(/* webpackChunkName: "expandCard" */ '../views/expandCard/index.vue'),
   },
+  {
+    path: '/progressStep',
+    name: 'progressStep',
+    component: () => import(/* webpackChunkName: "progressStep" */ '../views/progressStep/index.vue'),
+  },
 ]
 
 const router = createRouter({

@@ -5,6 +5,10 @@
   <router-link to="/expandCard">
     折叠页
   </router-link>
+
+  <router-link to="/progressStep">
+    进度条
+  </router-link>
 </template>
 
 <style scoped scss>
