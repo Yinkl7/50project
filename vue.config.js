@@ -18,6 +18,19 @@ module.exports = defineConfig({
             },
           },
         },
+        {
+          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
+          type: 'asset',
+          generator: {
+            filename: '[name][hash:8][ext]',
+          },
+          parser: {
+            dataUrlCondition: {
+              // 超过 10 * 1024 不转base64
+              maxSize: 10 * 1024,
+            },
+          },
+        },
       ],
     },
   },

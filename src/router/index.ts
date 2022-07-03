@@ -18,6 +18,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'progressStep',
     component: () => import(/* webpackChunkName: "progressStep" */ '../views/progressStep/index.vue'),
   },
+  {
+    path: '/rotateNavigation',
+    name: 'rotateNavigation',
+    component: () => import(/* webpackChunkName: "rotateNavigation" */ '../views/rotateNavigation/index.vue'),
+  },
 ]
 
 const router = createRouter({
